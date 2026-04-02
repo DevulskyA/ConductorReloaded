@@ -5,7 +5,7 @@
 2. `conductor/product-guidelines.md`
 3. `conductor/workflow.md`
 4. `conductor/tracks.md` e arquivos de track
-5. skills em `.agents/skills/`
+5. skills em `.agents/plugins/conductor-reload/skills/`
 
 ## Mandatory Rules
 - Nunca assumir qual SPEC revisar.

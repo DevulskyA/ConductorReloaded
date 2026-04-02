@@ -1,0 +1,30 @@
+{
+  "id": "conductor-reload",
+  "name": "Conductor Reloaded",
+  "description": "High-Assurance Workflow Engine for spec-driven development. Manages project tracks, specifications, implementation plans, and code reviews with constitutional governance.",
+  "version": "1.0.0",
+  "author": "Ariel",
+  "skills": [
+    "conductor-setup",
+    "conductor-newTrack",
+    "conductor-implement",
+    "conductor-review",
+    "conductor-revert",
+    "conductor-status"
+  ],
+  "dependencies": {
+    "constitution": "docs/spec-reviewer/system-spec-reviewer-constitution.md",
+    "agentRules": "AGENTS.md",
+    "conductorDir": "conductor/"
+  },
+  "metadata": {
+    "created_at": "2026-04-02T21:30:00Z",
+    "governance": "FAIL-CLOSED",
+    "precedence": [
+      "docs/spec-reviewer/system-spec-reviewer-constitution.md",
+      "conductor/product-guidelines.md",
+      "conductor/workflow.md",
+      "conductor/tracks.md"
+    ]
+  }
+}

@@ -5,3 +5,4 @@
 - [Workflow](./workflow.md)
 - [Product Guidelines](./product-guidelines.md)
 - [Tracks Registry](./tracks.md)
+- [Tracks Directory](./tracks/)

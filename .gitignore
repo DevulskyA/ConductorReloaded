@@ -5,3 +5,4 @@ dist
 *.bak*
 .patch*.js
 .vendor
+*.zip
