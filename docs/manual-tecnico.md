@@ -56,13 +56,16 @@ Você não precisa se preocupar em coordenar diferentes agentes. Criamos um flux
 
 Se o Agente iniciar a fase de implementação e você já tiver modificado algo, o Conductor Reloaded fará um `git status` silencioso na largada. Se detectar que código surgiu do nada (você os alterou), ele pausará e oferecerá a opção de fazer um **Auto-Sync** do seu `plan.md` com a realidade atual do repositório.
 
-### 4. Alternativa Fallback (Os Comandos Isolados)
-Apesar do fluxo orquestrado ser autônomo (via NLP ou Workflow UI), as Skills nativas injetadas podem sempre ser forçadas de forma isolada caso você perca o controle do Chat:
-- `/conductor:setup` - Força o Auto-Discovery inicial.
-- `/conductor:newTrack` - Força geração bruta de arquivo de Tracking.
-- `/conductor:review` - Se você escreveu um `spec.md` na mão e quer o stress-test.
-- `/conductor:implement` - Retoma a implementação após pausa conturbada.
-- `/conductor:revert` - Cancela o progresso e reverte o Git.
+### 4. Ações Destrutivas (Sempre com Permissão)
+Embora as transições de ciclo sejam automáticas, o Conductor **nunca** executará ações destrutivas (deletar tracks, arquivar, ou reverter via Git) sem apresentar um aviso claro e exigir uma resposta explícita ("Sim/Não") de você, mantendo o controle total sobre exclusões.
+
+### 5. Alternativa Fallback (Acionamentos Isolados)
+Apesar do fluxo principal orquestrado ser ininterrupto, as Skills nativas injetadas podem sempre ser invocadas pontualmente descrevendo o que você quer fazer caso você perca o contexto do Chat:
+- *"Force o Auto-Discovery inicial"* (Equivalente ao antigo setup)
+- *"Gere uma Track manualmente sem continuar"* (Equivalente ao newTrack avulso)
+- *"Revise a spec que eu acabei de escrever na mão"* (Equivalente a rodar review)
+- *"Retome a implementação de onde parei"* (Equivalente ao implement direto)
+- *"Cancele meu progresso e reverta o Git"* (Equivalente ao revert de emergência)
 
 ---
 
@@ -89,14 +92,14 @@ O componente passivo do `/conductor:implement` não escreve em branches de backu
 
 ## ⚡ Cheatsheet Invariável
 
-| Ação | Comando a Chamar | Efeito |
+| Ação | Como acionar via Agente / Workflow | Efeito |
 | --- | --- | --- |
-| **Ponto de Partida Zero** | `/conductor:setup` | Lê o repositório, sugere a stack e monta `conductor/*` |
-| **Quero uma Nova Feature** | `/conductor:newTrack` | Gera Spec ➔ Propõe Review ➔ Atualiza as listas |
-| **Codificar uma Feature Pura**| `/conductor:implement`| Processa o `plan.md`, reconciliando código com Git passivamente |
-| **Stress-Test da Ideia** | `/conductor:review` | Exige a confirmação dura (Q&A de regras de negócio faltantes) |
-| **"Deu Tudo Errado!"** | `/conductor:revert` | Isola mudanças e volta com segurança |
-| **"Onde estamos?"** | `/conductor:status` | Lista features em Progresso vs. Concluídas |
+| **Ponto de Partida Zero** | *"Inicie o projeto Conductor aqui"* | Auto-setup silencioso (se faltar algo, ele constrói `conductor/*`) |
+| **Criar Nova Feature** | *"Quero criar a feature X"* | Gera Spec ➔ Inicia Review (Auto) |
+| **Codificar Feature**| *"Codifique a track X"* | Sincroniza Git local ➔ Implementa `plan.md` |
+| **Stress-Test de Ideia** | *"Faça a revisão constitucional dessa track"* | Interrogatório de regras contra `spec.md` |
+| **Voltar Atrás (Rollback)** | *"Reverta a track X"* | Pede permissão explícita ➔ Reverte Git seguro |
+| **Situação Geral** | *"Status report"* | Relata progresso versus pendências |
 
 ---
 

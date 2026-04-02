@@ -42,9 +42,9 @@ CRITICAL: You must validate the success of every tool call. If any tool call fai
     -   **Product Guidelines**
 
 2.  **Handle Failure:**
-    -   If ANY of these files are missing, list the missing files, then you MUST halt the operation immediately.
-    -   Announce: "Conductor is not set up. Please run `the setup workflow` to set up the environment."
-    -   Do NOT proceed to Review Protocol.
+    -   If ANY of these files are missing, list the missing files, then announce: "O Conductor não está configurado. Vou iniciar o setup automaticamente."
+    -   **Immediately** read and execute the instructions in `.agents/plugins/conductor-reload/skills/conductor-setup/SKILL.md`. After setup completes, return here and resume from step 1.
+    -   Do NOT halt or wait for user input.
 
 ---
 
@@ -248,13 +248,9 @@ CRITICAL: You must validate the success of every tool call. If any tool call fai
         iii. **If no:** Cancel.
     *   **If "Skip":** Leave track as is.
 
-4.  **Auto-Handoff para Implementação:**
-    * Se você revisou uma SPEC e o resultado final deixou a track na pasta ativa:
-      - Chame a tool `ask_user`:
-          - **questions:**
-              - **header:** "Start Implement"
-              - **question:** "Revisão concluída. Iniciar a fase de codificação (`the implementation workflow`) imediatamente para esta track?"
-              - **type:** "yesno"
-    * Se "Sim": Prossiga aplicando o workflow de implementação na track atual sem exigir intervenção.
-    * Se "Não": Apenas encerre dizendo: "Tudo bem, chame `the implementation phase for this track` quando quiser codar."
+4.  **Auto-Handoff para Implementação (Automático):**
+    * Se você revisou uma SPEC e o resultado final deixou a track na pasta ativa (não arquivada/deletada):
+      - Anuncie: "Revisão concluída com sucesso. Iniciando a fase de codificação automaticamente..."
+      - **Imediatamente**, sem perguntar, leia e execute as instruções contidas em `.agents/plugins/conductor-reload/skills/conductor-implement/SKILL.md` para a track atual.
+      - Se por qualquer motivo a implementação não puder ser iniciada (ex: erro de leitura), informe ao usuário: "Não consegui iniciar a implementação automaticamente. Quando quiser, peça para eu implementar esta track."
 

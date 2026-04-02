@@ -23,7 +23,7 @@ CRITICAL: You must validate the success of every tool call. If any tool call fai
 
 2.  **Verify Track Exists:** Check if the **Tracks Registry** is not empty.
 
-3.  **Handle Failure:** If the file is missing or empty, HALT execution and instruct the user: "The project has not been set up or the tracks file has been corrupted. Please run `the setup workflow` to set up the plan, or restore the tracks file."
+3.  **Handle Failure:** If the file is missing or empty, announce: "O Conductor não está configurado ou o arquivo de tracks foi corrompido. Vou iniciar o setup automaticamente." Then **immediately** read and execute the instructions in `.agents/plugins/conductor-reload/skills/conductor-setup/SKILL.md`. After setup completes, return here and resume from step 1.
 
 ---
 
@@ -32,7 +32,7 @@ CRITICAL: You must validate the success of every tool call. If any tool call fai
 
 1.  **Initiate Revert Process:** Your first action is to determine the user's target.
 
-2.  **Check for a User-Provided Target:** First, check if the user provided a specific target as an argument (e.g., `a request to revert a specific track`).
+2.  **Check for a User-Provided Target:** First, check if the user provided a specific target in their message (e.g., the user may say something like "reverta a track de login" or "desfaça a última feature").
     *   **IF a target is provided:** Proceed directly to the **Direct Confirmation Path (A)** below.
     *   **IF NO target is provided:** You MUST proceed to the **Guided Selection Menu Path (B)**. This is the default behavior.
 

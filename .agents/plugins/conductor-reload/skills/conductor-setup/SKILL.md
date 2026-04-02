@@ -59,7 +59,7 @@ PLAN MODE PROTOCOL: This setup process runs entirely within Plan Mode. While in 
 
 | Artifact Exists | Target Section | Announcement |
 | :--- | :--- | :--- |
-| All files in `tracks/<track_id>/` (`spec`, `plan`, `metadata`, `index`) | **HALT** | "The project is already initialized. Use `the process to create a new track` or `the implementation workflow`." |
+| All files in `tracks/<track_id>/` (`spec`, `plan`, `metadata`, `index`) | **HALT** | "O projeto já está inicializado. Me diga qual feature você quer criar ou implementar." |
 | `index.md` (top-level) | **Section 3.0** | "Resuming setup: Scaffolding is complete. Next: generate the first track. (Note: If an incomplete track folder was detected, we will restart this step to ensure a clean, consistent state)." |
 | `workflow.md` | **Section 2.6** | "Resuming setup: Workflow is defined. Next: generate project index." |
 | `code_styleguides/` | **Section 2.5** | "Resuming setup: Guides/Tech Stack configured. Next: define project workflow." |
@@ -557,5 +557,5 @@ PLAN MODE PROTOCOL: This setup process runs entirely within Plan Mode. While in 
 ### 3.4 Final Announcement
 1.  **Announce Completion:** After the track has been created, announce that the project setup and initial track generation are complete.
 2.  **Save Conductor Files:** Add and commit all files with the commit message `conductor(setup): Add conductor setup files`.
-3.  **Next Steps:** Inform the user that they can now begin work by running `the implementation workflow`.
+3.  **Next Steps (Auto-Handoff Automático):** Anuncie que o setup está completo. Em seguida, **automaticamente**, leia e execute as instruções contidas em `.agents/plugins/conductor-reload/skills/conductor-review/SKILL.md` para a track recém-criada, iniciando a Revisão Constitucional sem exigir comando do usuário.
 

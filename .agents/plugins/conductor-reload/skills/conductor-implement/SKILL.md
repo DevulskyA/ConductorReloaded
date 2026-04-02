@@ -26,7 +26,7 @@ CRITICAL: You must validate the success of every tool call. If any tool call fai
     -   **Tech Stack**
     -   **Workflow**
 
-2.  **Handle Failure:** If ANY of these are missing (or their resolved paths do not exist), Announce: "Conductor is not set up. Please run `the setup workflow`." and HALT.
+2.  **Handle Failure:** If ANY of these are missing (or their resolved paths do not exist), announce: "O Conductor não está configurado. Vou iniciar o setup automaticamente." Then **immediately** read and execute the instructions in `.agents/plugins/conductor-reload/skills/conductor-setup/SKILL.md`. After setup completes, return here and resume from step 1.
 
 
 ---
@@ -34,7 +34,7 @@ CRITICAL: You must validate the success of every tool call. If any tool call fai
 ## 2.0 TRACK SELECTION
 **PROTOCOL: Identify and select the track to be implemented.**
 
-1.  **Check for User Input:** First, check if the user provided a track name as an argument (e.g., `the implementation of a feature`).
+1.  **Check for User Input:** First, check if the user provided a track name in their message (e.g., the user may say something like "implemente a track de login" or "continue a feature de autenticação").
 
 2.  **Locate and Parse Tracks Registry:**
     -   Resolve the **Tracks Registry**.
@@ -216,7 +216,7 @@ CRITICAL: You must validate the success of every tool call. If any tool call fai
 
 3.  **Handle User Response:**
     *   **If user chooses "Review":**
-        *   Announce: "Please run `the review workflow` to verify your changes. You will be able to archive or delete the track after the review."
+        *   Announce: "Entendido. Quando quiser verificar as mudanças, peça para eu iniciar a revisão desta track." Then **immediately** read and execute the instructions in `.agents/plugins/conductor-reload/skills/conductor-review/SKILL.md` for the current track.
     *   **If user chooses "Archive":**
         i.   **Create Archive Directory:** Check for the existence of `conductor/archive/`. If it does not exist, create it.
         ii.  **Archive Track Folder:** Move the track's folder from its current location (resolved via the **Tracks Directory**) to `conductor/archive/<track_id>`.

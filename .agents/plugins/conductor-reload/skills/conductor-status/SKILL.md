@@ -21,9 +21,9 @@ CRITICAL: You must validate the success of every tool call. If any tool call fai
     -   **Workflow**
 
 2.  **Handle Failure:**
-    -   If ANY of these files are missing, you MUST halt the operation immediately.
-    -   Announce: "Conductor is not set up. Please run `the setup workflow` to set up the environment."
-    -   Do NOT proceed to Status Overview Protocol.
+    -   If ANY of these files are missing, announce: "O Conductor não está configurado. Vou iniciar o setup automaticamente."
+    -   **Immediately** read and execute the instructions in `.agents/plugins/conductor-reload/skills/conductor-setup/SKILL.md`. After setup completes, return here and resume from step 1.
+    -   Do NOT halt or wait for user input.
 
 ---
 

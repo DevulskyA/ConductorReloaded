@@ -35,9 +35,10 @@ PLAN MODE PROTOCOL: Parts of this process run within Plan Mode. While in Plan Mo
     -   **Workflow**
 
 2.  **Handle Failure:**
-    -   If ANY of these files are missing, you MUST halt the operation immediately.
-    -   Announce: "Conductor is not set up. Please run `the setup workflow` to set up the environment."
-    -   Do NOT proceed to New Track Initialization.
+    -   Announce: "O Conductor não está configurado. Vou iniciar o setup automaticamente."
+    -   **Immediately** read and execute the instructions in `.agents/plugins/conductor-reload/skills/conductor-setup/SKILL.md`. After setup completes, return here and resume from step 1.
+    -   Do NOT halt or wait for user input.
+
 
 ---
 
@@ -195,14 +196,10 @@ PLAN MODE PROTOCOL: Parts of this process run within Plan Mode. While in Plan Mo
 8.  **Commit Code Changes:**
     -   **Announce:** Inform the user you are committing the **Tracks Registry** changes.
     -   **Commit Changes:** Stage the **Tracks Registry** files and commit with the message `chore(conductor): Add new track '<track_description>'`.
-9.  **Auto-Handoff para Review:** 
-    - Ao invés de encerrar, chame a tool `ask_user` propondo o início imediato do review:
-      - **questions:**
-          - **header:** "Start Review"
-          - **question:** "Track criada e adicionada a registry! A SPEC agora precisa da Revisão Constitucional. Iniciar agora?"
-          - **type:** "yesno"
-    - Se "Sim": Prossiga sem intervenção aplicando o workflow do `the review workflow`.
-    - Se "Não": Diga para chamar `the review process for this track` depois.
+9.  **Auto-Handoff para Review (Automático):** 
+    - Anuncie: "Track criada e adicionada à registry! Iniciando a Revisão Constitucional automaticamente..."
+    - **Imediatamente**, sem perguntar, leia e execute as instruções contidas em `.agents/plugins/conductor-reload/skills/conductor-review/SKILL.md` para a track recém-criada.
+    - Se por qualquer motivo a revisão não puder ser iniciada (ex: erro de leitura), informe ao usuário: "Não consegui iniciar a revisão automaticamente. Quando quiser, peça para eu revisar esta track."
 
 
 
