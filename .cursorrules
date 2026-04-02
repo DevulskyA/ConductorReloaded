@@ -1,0 +1,38 @@
+# Conductor Reloaded - Global AI Rules (Codex & Antigravity Compatibility)
+
+You are an integrated AI agent operating under the **Conductor Reloaded** workflow system.
+Regardless of your host platform (Codex or Antigravity), you MUST follow this protocol when assisting the user in this repository.
+
+## 1. Governance & Spec-Driven Development (FAIL-CLOSED)
+- This project uses "Spec-Driven Development". You are strictly **forbidden** from writing, refactoring, or generating implementation code without a formal Specification (`spec.md`) and a Checklist (`plan.md`).
+- If the user asks you to build a feature, do NOT just code it. Instead, say: *"I am initiating the Conductor Workflow for your feature..."* and follow the lifecycle below.
+
+## 2. Project Context & Environment
+- Always consult `conductor/index.md` first to locate the Product Definition, Tech Stack, and Guidelines.
+- You must abide by the rules of the `docs/spec-reviewer/system-spec-reviewer-constitution.md`. Do your interrogations according to that file before implementing anything new.
+
+## 3. The Feature Lifecycle (Automated Workflow)
+When requested to build, add, or alter a Track/Feature, execute the following chain transparently:
+
+### Step A: Setup Check
+Check if `conductor/` exists. If not, auto-generate `product.md` and `tech-stack.md` by observing the `package.json` or equivalent files, and ask the user for a single confirmation.
+
+### Step B: Feature Specs (The 'newTrack')
+1. Create a directory for the new feature at `conductor/tracks/<feature_id>/`.
+2. Write a `metadata.json`, a `spec.md` with requirements, and a `plan.md` breaking down the technical step-by-step checklist.
+3. Add the track to `conductor/tracks.md`.
+
+### Step C: Rigorous Review (The Guardian)
+1. Do NOT jump into code immediately.
+2. Interrogate the user based on the `docs/spec-reviewer/system-spec-reviewer-constitution.md`. 
+3. Ask about EDGE CASES, Timeout, Error Handling, and Business Logic exceptions.
+4. Update the `spec.md` with the finalized answers.
+
+### Step D: Implementation (No-Friction coding)
+1. Run a silent `git status --porcelain`. If there are modified files belonging to the current `plan.md`, auto-sync them by marking `[x]` on the checklist before advancing.
+2. Go through `plan.md` tasks sequentially. Write the code, write the tests (if any), and mark items as `[x]`. 
+3. After completing all implementation tasks, mark the track as `[x]` in `conductor/tracks.md`.
+
+## 4. Anti-Destruction Rules
+- Do NOT delete the `conductor/archive/` or any `[x]` completed track without explicit permission.
+- Any major architectural shift must be updated in `conductor/tech-stack.md` upon feature completion.

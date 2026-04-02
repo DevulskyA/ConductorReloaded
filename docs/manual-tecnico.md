@@ -22,45 +22,47 @@ O Conductor Reloaded não é apenas um template ou um assistente de código. É 
 
 ---
 
-## 🚀 Parte II: Guia de Bolso (Como Usar no Dia-a-Dia)
+## 🚀 Parte II: Guia de Bolso (Agnóstico e Invisível)
 
-Você interage com o Conductor utilizando as **Skills do Antigravity**, acessadas via comandos de barra `/`.
+Você interage com o Conductor através de **Workflows do Antigravity** ou pelo **Codex**. Não é necessário memorizar comandos de barra (`/`).
 
 ### 1. Inicializando a Engrenagem
 **Para começar um novo projeto ou plugar o Conductor em um projeto existente:**
-```bash
-/conductor:setup
-```
+Apenas peça ao agente na sua linguagem natural:
+*"Prepare o ambiente do Conductor neste projeto"* (ou dispare a execução via UI).
+
 O que acontece:
 - O agente varrerá seu repositório (*Auto-Discovery*). Se for em uma base de código existente, ele tentará detectar passivamente as tecnologias (ex: `package.json`).
 - O **Auto-Pilot** será sugerido: Você pode permitir que o agente rascunhe automaticamente todas as suas documentações vitais da arquitetura (`tech-stack.md`, `product.md` e Styleguides) exigindo apenas um "De acordo" final seu, diminuindo a burocracia do dia 1.
 
 ### 2. O Ciclo de Vida de uma Track (Feature Lifecycle)
-Sempre que você for trabalhar em algo novo, você invoca o criador:
-```bash
-/conductor:newTrack
-```
-#### A Esteira Automática (Auto-Handoff)
+Sempre que você for trabalhar em algo novo, basta pedir à inteligência artificial:
+*"Eu quero começar uma nova feature chamada X"*
+
+O **Workflow Nativo** (definido em `.agents/workflows/` para o Antigravity ou em `.cursorrules` para o Codex) será acionado e guiará a esteira.
+
+#### A Esteira Automática (Auto-Handoff Ininterrupto)
 Você não precisa se preocupar em coordenar diferentes agentes. Criamos um fluxo de *"Auto-Handoff"*. Basta seguir o diálogo:
 
 1. **A Visão Inicial:** Diga o que quer (ex: "Quero uma tela de login com OAuth").
 2. **Perguntas Rápidas:** O agente estruturará a base do documento `spec.md`.
 3. **Ponte para Revisão (A Constituição Ataca):** Assim que a estruturação inicial termina, o Conductor perguntará: *"Iniciar a Revisão Constitucional agora?"*. Ao dizer "Sim", o modo *Reviewer* entra em ação silenciosamente. 
 4. **O Interrogatório de Negócio:** O Guardião fará perguntas duras sobre Gaps Técnicos e Gaps de Negócio não cobertos. Preencha os vazios que ele detectar.
-5. **A Ponte para o Código:** Assim que a SPEc for selada e validada, o Conductor perguntará: *"Revisão Mestra concluída. Iniciar Codificação?"*. 
-6. **Mãos na Massa:** Se você concordar, a implementação (`/conductor:implement`) assume e executa todo o plano.
+5. **A Ponte para o Código:** Assim que a SPEc for selada e validada, a IA perguntará: *"Revisão Mestra concluída. Iniciar Codificação?"*. 
+6. **Mãos na Massa:** Se você concordar, a implementação assume e executa todo o plano.
 
 ### 3. A Prevenção de Desastres Git
 > *"Eu modifiquei arquivos da feature durante a implementação manualmente. E agora?"*
 
-Se você digitar `/conductor:implement` em uma Track já em andamento, o Conductor Reloaded possui um radar **Anti-Dessincronia Git**. Ele fará um `git status` silencioso na largada. Se detectar que código surgiu do nada (você os alterou), ele pausará antes de bater a cabeça na parede e lhe oferecerá a opção de fazer um **Auto-Sync** do seu `plan.md` com a realidade atual do repositório, marcando suas alterações como resolvidas.
+Se o Agente iniciar a fase de implementação e você já tiver modificado algo, o Conductor Reloaded fará um `git status` silencioso na largada. Se detectar que código surgiu do nada (você os alterou), ele pausará e oferecerá a opção de fazer um **Auto-Sync** do seu `plan.md` com a realidade atual do repositório.
 
-### 4. Controle Direto e Emergências
-Caso queira disparar os componentes da esteira de forma isolada, as Skills individuais estão sempre disponíveis:
-- `/conductor:review` - Se você escreveu um `spec.md` manualmente e quer chamar o Guardião para fazer o stress-test do que você imaginou.
-- `/conductor:implement` - Retoma a implementação de tarefas não concluídas de um `plan.md` após uma pausa.
-- `/conductor:status` - Lê o arquivo de registros (`conductor/tracks.md`) e lista o status completo de andamento das tarefas na visão de pássaro.
-- `/conductor:revert` - Cancela o progresso atual, apaga a Track problemática com segurança através do Git sem quebrar a árvore mestra.
+### 4. Alternativa Fallback (Os Comandos Isolados)
+Apesar do fluxo orquestrado ser autônomo (via NLP ou Workflow UI), as Skills nativas injetadas podem sempre ser forçadas de forma isolada caso você perca o controle do Chat:
+- `/conductor:setup` - Força o Auto-Discovery inicial.
+- `/conductor:newTrack` - Força geração bruta de arquivo de Tracking.
+- `/conductor:review` - Se você escreveu um `spec.md` na mão e quer o stress-test.
+- `/conductor:implement` - Retoma a implementação após pausa conturbada.
+- `/conductor:revert` - Cancela o progresso e reverte o Git.
 
 ---
 
