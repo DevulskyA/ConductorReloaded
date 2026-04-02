@@ -69,7 +69,33 @@ Apesar do fluxo principal orquestrado ser ininterrupto, as Skills nativas injeta
 
 ---
 
-## 🔧 Parte III: Profundidade Técnica (Under the Hood)
+## 🎬 Parte III: Exemplos de Uso no Mundo Real
+
+Abaixo estão cenários reais de interação entre o desenvolvedor (Você) e a Inteligência Artificial no chat, mostrando como a ausência de comandos rígidos deixa a governança invisível e fluida:
+
+### Cenário 1: "Greenfield" (Auto-Setup + Encadeamento Mágico)
+> **Você:** "Quero criar uma funcionalidade de Login via Google OAuth."
+> **Agente:** "Notei que o motor do Conductor não está configurado neste projeto. Vou iniciar o setup automaticamente criando a infraestrutura básica... *[Arquivos gerados]*. Pronto! Iniciando a criação da sua Track de Login. Além do Google, há outra exigência?"
+> **Você:** "O usuário tem que ir para /dashboard no sucesso."
+> **Agente:** "Spec e Plan consolidados na pasta `conductor/`. Iniciando a Revisão Constitucional automaticamente... *[Modo Guardião assume]*. Notei um Gap de Negócio crítico: não há tratamento para falha na API do Google. Como lidamos?"
+> **Você:** "Exiba um toast vermelho na tela e redirecione a rota para /login com query params."
+> **Agente:** "Vulnerabilidade documentada. Revisão impecável. Iniciando a fase de codificação automaticamente... *[Agente codifica os passos cruciais sincronizado com o Git]*."
+
+### Cenário 2: Blindagem Anti-Dessincronia (Git-Awareness)
+> **Você:** "Retome a codificação da feature de Carrinho de Compras."
+> **Agente:** "Acessando checklist `plan.md`... *[Roda checagem Git silenciosa]*. ⚠️ *Aviso de Dessincronia.* Detectei que você mesmo modificou `cart.controller.ts` manualmente e isso atende aos passos 2 e 3 do nosso plano. Deseja realizar um **Auto-Sync** e marcar esses itens como `[x]` antes de dar sequencia?"
+> **Você:** "Sim, sincronize."
+> **Agente:** "Ok. Reconciliação com a realidade atualizada. Pulando diretamente para o Passo 4 da implementação."
+
+### Cenário 3: Retirada de Risco (Revert Limpo)
+> **Você:** "Deu tudo errado. Reverta a track de Carrinho de Compras inteira."
+> **Agente:** "Mapeando o histórico do Git... Identifiquei a árvore lógica da sua feature: 1 commit novo e 1 alteração de rotas (`f8da122` e `a01b2cc`). 🛑 **Aviso Destrutivo:** Irei desfazer essas ações diretamente na sua árvore e remover a Track. Você confirma (Sim/Não)?"
+> **Você:** "Sim."
+> **Agente:** "Git Revert aplicado sucessivamente. Seu código está íntegro exatamente como estava antes do início dessa feature."
+
+---
+
+## 🔧 Parte IV: Profundidade Técnica (Under the Hood)
 
 Para os Engenheiros querendo customizar ou compreender a caixa preta, o Conductor Reloaded reside nativamente no Antigravity sob o caminho:
 `.agents/plugins/conductor-reload/`
