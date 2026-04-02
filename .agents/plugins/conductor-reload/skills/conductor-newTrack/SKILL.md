@@ -36,7 +36,7 @@ PLAN MODE PROTOCOL: Parts of this process run within Plan Mode. While in Plan Mo
 
 2.  **Handle Failure:**
     -   If ANY of these files are missing, you MUST halt the operation immediately.
-    -   Announce: "Conductor is not set up. Please run `/conductor:setup` to set up the environment."
+    -   Announce: "Conductor is not set up. Please run `the setup workflow` to set up the environment."
     -   Do NOT proceed to New Track Initialization.
 
 ---
@@ -201,8 +201,8 @@ PLAN MODE PROTOCOL: Parts of this process run within Plan Mode. While in Plan Mo
           - **header:** "Start Review"
           - **question:** "Track criada e adicionada a registry! A SPEC agora precisa da Revisão Constitucional. Iniciar agora?"
           - **type:** "yesno"
-    - Se "Sim": Prossiga sem intervenção aplicando o workflow do `/conductor:review`.
-    - Se "Não": Diga para chamar `/conductor:review <track_id>` depois.
+    - Se "Sim": Prossiga sem intervenção aplicando o workflow do `the review workflow`.
+    - Se "Não": Diga para chamar `the review process for this track` depois.
 
 
 

@@ -43,7 +43,7 @@ CRITICAL: You must validate the success of every tool call. If any tool call fai
 
 2.  **Handle Failure:**
     -   If ANY of these files are missing, list the missing files, then you MUST halt the operation immediately.
-    -   Announce: "Conductor is not set up. Please run `/conductor:setup` to set up the environment."
+    -   Announce: "Conductor is not set up. Please run `the setup workflow` to set up the environment."
     -   Do NOT proceed to Review Protocol.
 
 ---
@@ -253,8 +253,8 @@ CRITICAL: You must validate the success of every tool call. If any tool call fai
       - Chame a tool `ask_user`:
           - **questions:**
               - **header:** "Start Implement"
-              - **question:** "Revisão concluída. Iniciar a fase de codificação (`/conductor:implement`) imediatamente para esta track?"
+              - **question:** "Revisão concluída. Iniciar a fase de codificação (`the implementation workflow`) imediatamente para esta track?"
               - **type:** "yesno"
     * Se "Sim": Prossiga aplicando o workflow de implementação na track atual sem exigir intervenção.
-    * Se "Não": Apenas encerre dizendo: "Tudo bem, chame `/conductor:implement <track_id>` quando quiser codar."
+    * Se "Não": Apenas encerre dizendo: "Tudo bem, chame `the implementation phase for this track` quando quiser codar."
 
