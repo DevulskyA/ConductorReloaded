@@ -195,7 +195,14 @@ PLAN MODE PROTOCOL: Parts of this process run within Plan Mode. While in Plan Mo
 8.  **Commit Code Changes:**
     -   **Announce:** Inform the user you are committing the **Tracks Registry** changes.
     -   **Commit Changes:** Stage the **Tracks Registry** files and commit with the message `chore(conductor): Add new track '<track_description>'`.
-9.  **Announce Completion:** Inform the user:
-    > "New track '<track_id>' has been created and added to the tracks file. You can now start implementation by running `/conductor:implement`."
+9.  **Auto-Handoff para Review:** 
+    - Ao invés de encerrar, chame a tool `ask_user` propondo o início imediato do review:
+      - **questions:**
+          - **header:** "Start Review"
+          - **question:** "Track criada e adicionada a registry! A SPEC agora precisa da Revisão Constitucional. Iniciar agora?"
+          - **type:** "yesno"
+    - Se "Sim": Prossiga sem intervenção aplicando o workflow do `/conductor:review`.
+    - Se "Não": Diga para chamar `/conductor:review <track_id>` depois.
+
 
 

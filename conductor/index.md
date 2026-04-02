@@ -1,6 +1,7 @@
 # Conductor Project Context Index
 
 - [Product Definition](./product.md)
+- [Technical Manual](../docs/manual-tecnico.md)
 - [Tech Stack](./tech-stack.md)
 - [Workflow](./workflow.md)
 - [Product Guidelines](./product-guidelines.md)

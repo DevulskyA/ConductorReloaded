@@ -135,6 +135,18 @@ PLAN MODE PROTOCOL: This setup process runs entirely within Plan Mode. While in 
         -   Announce that new project will be initialized, briefly noting that no existing application code or dependencies were found.
         -   Proceed to the next step in this file.
 
+3.5 **Auto-Pilot Proposal:**
+    - Use a tool `ask_user` para propor o preenchimento automático das etapas que se seguem:
+        - **questions:**
+            - **header:** "Auto-Pilot"
+            - **question:** "Gostaria que eu examinasse o cenário e configurasse automaticamente os Documentos de Produto, Guidelines e Tech Stack (exigindo apenas uma confirmação no final), ou prefere ir passo a passo?"
+            - **type:** "choice"
+            - **multiSelect:** false
+            - **options:**
+                - Label: "Auto-Pilot", Description: "Pule as perguntas triviais; gere rascunhos baseados no melhor cenário detectado."
+                - Label: "Passo a Passo", Description: "Pergunte tudo interativamente conforme o padrão."
+    - Se "Auto-Pilot" for selecionado: Ao chegar nas seções 2.1, 2.2 e 2.3, **assuma automaticamente** que a resposta do usuário para `Determine Mode` foi sempre "Autogenerate" ou "Recommended", pulando as fases interativas até chegar nas validações de rascunhos finais.
+
 4.  **Initialize Git Repository (for Greenfield):**
     -   If a `.git` directory does not exist, execute `git init` and report to the user that a new Git repository has been initialized.
 

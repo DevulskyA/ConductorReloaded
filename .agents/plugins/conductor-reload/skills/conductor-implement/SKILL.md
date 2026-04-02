@@ -93,6 +93,19 @@ CRITICAL: You must validate the success of every tool call. If any tool call fai
         -   **Workflow:** Resolve **Workflow** (via the **Universal File Resolution Protocol** using the project's index file).
     c. **Error Handling:** If you fail to read any of these files, you MUST stop and inform the user of the error.
 
+3.5. **Auto-Sincronia Git (Anti-Dessincronia):**
+    - Antes de agir, execute silenciosamente `git status --porcelain` e um `git log -n 3 --oneline`.
+    - Se você detectar que o usuário modificou arquivos manuais que o `plan.md` deveria fazer, mas as tasks ainda estão `[ ]`, chame um `ask_user`:
+        - **questions:**
+            - **header:** "Sync Warning"
+            - **question:** "Detectei código novo na branch que parece resolver partes pendentes do \`plan.md\`. Quer que eu faça um auto-sync (marcá-las como concluídas no plano) antes de continuar a implementação?"
+            - **type:** "choice"
+            - **options:**
+                - Label: "Auto-Sync", Description: "Revise o diff manual e atualize o plan.md para mim."
+                - Label: "Ignorar", Description: "Não faça nada, continue a esteira normalmente."
+    - Se o usuário escolher "Auto-Sync", analise rapidamente as mudanças não-rastreadas, marque como `[x]` as tarefas pertinentes no `plan.md`, e faça commit da atualização do plano.
+
+
 4.  **Execute Tasks and Update Track Plan:**
     a. **Announce:** State that you will now execute the tasks from the track's **Implementation Plan** by following the procedures in the **Workflow**.
     b. **Iterate Through Tasks:** You MUST now loop through each task in the track's **Implementation Plan** one by one.
