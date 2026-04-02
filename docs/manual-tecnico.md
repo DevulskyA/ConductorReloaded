@@ -69,29 +69,55 @@ Apesar do fluxo principal orquestrado ser ininterrupto, as Skills nativas injeta
 
 ---
 
-## 🎬 Parte III: Exemplos de Uso no Mundo Real
+## 🎬 Parte III: Exemplos Práticos (Como Controlar a Integração)
 
-Abaixo estão cenários reais de interação entre o desenvolvedor (Você) e a Inteligência Artificial no chat, mostrando como a ausência de comandos rígidos deixa a governança invisível e fluida:
+Nesta seção, dissecamos de forma técnica como traduzir a sua intenção (Linguagem Natural) na esteira orquestrada do Conductor sem depender de comandos estritos.
 
-### Cenário 1: "Greenfield" (Auto-Setup + Encadeamento Mágico)
-> **Você:** "Quero criar uma funcionalidade de Login via Google OAuth."
-> **Agente:** "Notei que o motor do Conductor não está configurado neste projeto. Vou iniciar o setup automaticamente criando a infraestrutura básica... *[Arquivos gerados]*. Pronto! Iniciando a criação da sua Track de Login. Além do Google, há outra exigência?"
-> **Você:** "O usuário tem que ir para /dashboard no sucesso."
-> **Agente:** "Spec e Plan consolidados na pasta `conductor/`. Iniciando a Revisão Constitucional automaticamente... *[Modo Guardião assume]*. Notei um Gap de Negócio crítico: não há tratamento para falha na API do Google. Como lidamos?"
-> **Você:** "Exiba um toast vermelho na tela e redirecione a rota para /login com query params."
-> **Agente:** "Vulnerabilidade documentada. Revisão impecável. Iniciando a fase de codificação automaticamente... *[Agente codifica os passos cruciais sincronizado com o Git]*."
+### Exemplo 1: Iniciando uma Funcionalidade Completa (Greenfield)
 
-### Cenário 2: Blindagem Anti-Dessincronia (Git-Awareness)
-> **Você:** "Retome a codificação da feature de Carrinho de Compras."
-> **Agente:** "Acessando checklist `plan.md`... *[Roda checagem Git silenciosa]*. ⚠️ *Aviso de Dessincronia.* Detectei que você mesmo modificou `cart.controller.ts` manualmente e isso atende aos passos 2 e 3 do nosso plano. Deseja realizar um **Auto-Sync** e marcar esses itens como `[x]` antes de dar sequencia?"
-> **Você:** "Sim, sincronize."
-> **Agente:** "Ok. Reconciliação com a realidade atualizada. Pulando diretamente para o Passo 4 da implementação."
+**1. O Objetivo:** Você precisa criar uma nova arquitetura para login com integração OAuth via Google. O repositório ainda não possui a pasta `conductor/`.
 
-### Cenário 3: Retirada de Risco (Revert Limpo)
-> **Você:** "Deu tudo errado. Reverta a track de Carrinho de Compras inteira."
-> **Agente:** "Mapeando o histórico do Git... Identifiquei a árvore lógica da sua feature: 1 commit novo e 1 alteração de rotas (`f8da122` e `a01b2cc`). 🛑 **Aviso Destrutivo:** Irei desfazer essas ações diretamente na sua árvore e remover a Track. Você confirma (Sim/Não)?"
-> **Você:** "Sim."
-> **Agente:** "Git Revert aplicado sucessivamente. Seu código está íntegro exatamente como estava antes do início dessa feature."
+**2. A Entrada (Prompt do Usuário):** 
+> *"Crie uma nova feature de Login via Google OAuth."*
+
+**3. A Orquestração Interna (O que o Conductor faz sozinho):**
+- **Trigger 1 (Auto-Setup):** O sistema detecta a ausência da governança. Ele silenciosamente faz um *scaffolding* das regras e stack de projeto baseando-se no que encontrar na raiz.
+- **Trigger 2 (NewTrack):** Uma vez feito o setup, ele isola uma pasta `conductor/tracks/login-google_2026/` e cria a infraestrutura da feature.
+- **Trigger 3 (Auto-Handoff):** Ele submete a estrutura inicial instantaneamente ao **Spec Reviewer Constitution**, que interrompe a escrita de código para te interrogar sobre os gaps da regra de negócio de login (ex: falha de internet no meio do token).
+
+**4. O Resultado Final:** O projeto passa de zero a uma funcionalidade com **Design de Contrato** documentado, revisado e com um checklist atômico pronto para você autorizar o início do código.
+
+---
+
+### Exemplo 2: O 'Auto-Sync' após Retrabalho Manual no Git
+
+**1. O Objetivo:** Um colega (ou você mesmo) alterou arquivos de rotas do projeto diretamente no VS Code na noite passada para adiantar trabalho. Hoje de manhã, você quer que a Inteligência Artificial retome de onde você parou baseado no plano técnico de uma feature chamada 'Carrinho de Compras'.
+
+**2. A Entrada (Prompt do Usuário):** 
+> *"Retome a codificação da feature de Carrinho de Compras."*
+
+**3. A Orquestração Interna:**
+- **Trigger 1 (File Resolution):** O agente acha o ID da respectiva e lê o `plan.md`.
+- **Trigger 2 (Git-Awareness):** Antes de escrever qualquer linha ou subscrever seu trabalho da noite passada, ele roda um `git status --porcelain`. O sistema descobre que a alteração cruza (resolve) as tarefas 2 e 3 do Checklist.
+- **Trigger 3 (Conciliação):** O agente pausa, lhe mostra o relatório de conflito e sugere marcar como `[x]` as tarefas detectadas no Git local isoladamente antes de dar continuidade na próxima demanda mecânica.
+
+**4. O Resultado Final:** Sincronia limpa. Ele não atropela seu código novo, pula os passos necessários e avança na implementação respeitando o estado do versionamento.
+
+---
+
+### Exemplo 3: A Reversão de Múltiplos Commits (Safe Revert)
+
+**1. O Objetivo:** Uma feature de Migração Banco de Dados inteira, com 4 commits acumulados na master, introduziu um memory leak no ambiente. Você necessita arrancar apenas o estado modificado da interface sem quebrar outras contribuições.
+
+**2. A Entrada (Prompt do Usuário):** 
+> *"Reverta inteiramente a track de Migração de Banco."*
+
+**3. A Orquestração Interna:**
+- **Trigger 1 (Track Tracing):** O sistema varre os IDs atrelados ao registro em `conductor/tracks.md`.
+- **Trigger 2 (Log Intersecting):** Ele cruza via `git log` localizando de maneira reversa todos os SHAs ligados aos commits exatos que dizem `feat: Migração` listados sequencialmente.
+- **Trigger 3 (Safe Prompting):** Trata-se de uma *ação destrutiva*. A automação **pausa bloqueando a lixeira** e cospe uma listagem contendo um prompt duro com "Sim ou Não" (exclusivo) antes do rollback acontecer.
+
+**4. O Resultado Final:** Só após o "Sim" consciente e intencional do operador é que o Git Revert inverso emenda o código do projeto devolvendo as especificações originais.
 
 ---
 
