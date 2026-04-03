@@ -49,3 +49,40 @@ Before making changes, ask: (1) Right file? (2) Parent/wrapper handles it? (3) E
 
 ---
 > *Certified Ironclad v19 — Modular Context Protocol.*
+
+---
+
+## 🗺️ UNIVERSAL FILE RESOLUTION INDEX
+> **Goal:** Eradicate LLM exploratory queries (`dir`/`ls`/`tree`). Read this index before attempting to discover files. All essential tools are mapped statically here.
+
+### 1. Conductor Native Ecosystem (Core Paths)
+- **Constitutição / Spec Reviewer:** `docs/spec-reviewer/system-spec-reviewer-constitution.md`
+- **Manual Técnico:** `docs/manual-tecnico.md`
+- **Mesa Central (Registry Index):** `conductor/index.md`
+- **Workflow & Rules List:** `conductor/workflow.md`, `conductor/product.md`, `conductor/tech-stack.md`
+- **Tracking Database:** `conductor/tracks/` e `conductor/tracks.md`
+
+### 2. Antigravity Plugins (Conductor Core Skills)
+Path: `.agents/plugins/conductor-reload/skills/`
+- **`conductor-setup/SKILL.md`**: Auto-scaffolds the conductor environment
+- **`conductor-newTrack/SKILL.md`**: Generates a feature track (Spec & Plan)
+- **`conductor-review/SKILL.md`**: Interrogates the spec against the Constitution
+- **`conductor-implement/SKILL.md`**: Git-aware execution of the track's plan
+- **`conductor-revert/SKILL.md`**: Safe rollback interface
+- **`conductor-status/SKILL.md`**: Project situation report
+
+### 3. Workflow Engine
+- **Orquestrador Central:** `.agents/workflows/conductor-feature.md` (Powers the NLP Pipeline)
+
+### 4. Advanced Tooling & Governance Directory
+- **Rulebooks (`.agents/rules/`):**
+  - `CORE_PROTOCOL.md` (Feature Ledger, Permissions, Context Gates)
+  - `UI_PROTOCOL.md` (Design schema, shapes, A11y)
+  - `RUNTIME_PROVENANCE.md` (Build/deploy hygiene, debugging rules)
+  - `STACK_INVARIANTS.md` (Clean code per language)
+- **Specialized Agents (`.agents/agents/`):**
+  - Architect (`architect-specialist.md`), Backend (`backend-specialist.md`), Frontend (`frontend-specialist.md`), QA (`test-writer.md`), Dev-ops (`devops-specialist.md`), Bug-fixer (`bug-fixer.md`), Code-reviewer (`code-reviewer.md`)
+- **Generic Skills (`.agents/skills/`):**
+  - `api-design/SKILL.md`, `bug-investigation/SKILL.md`, `code-review/SKILL.md`, `commit-message/SKILL.md`, `documentation/SKILL.md`, `feature-breakdown/SKILL.md`, `pr-review/SKILL.md`, `refactoring/SKILL.md`, `security-audit/SKILL.md`, `test-generation/SKILL.md`
+
+*(Mandate: If the user explicitly requests an agent or skill from the above, you MUST read its file path directly. Do NOT "dir" to find it. Otherwise, rely solely on the main workflow.)*
