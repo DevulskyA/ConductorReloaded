@@ -1,0 +1,698 @@
+{
+  "version": "1.0.0",
+  "generated": "2026-01-16T21:59:34.393Z",
+  "stack": {
+    "primaryLanguage": "typescript",
+    "languages": [
+      "typescript"
+    ],
+    "frameworks": [],
+    "buildTools": [
+      "vite"
+    ],
+    "testFrameworks": [
+      "vitest"
+    ],
+    "packageManager": null,
+    "isMonorepo": false,
+    "hasDocker": false,
+    "hasCI": false
+  },
+  "structure": {
+    "totalFiles": 92,
+    "topDirectories": [
+      {
+        "name": "API_CATALOG.md",
+        "fileCount": 1
+      },
+      {
+        "name": "API_INDEX.md",
+        "fileCount": 1
+      },
+      {
+        "name": "docs",
+        "fileCount": 85
+      },
+      {
+        "name": "FEATURE_LEDGER.md",
+        "fileCount": 1
+      },
+      {
+        "name": "GEMINI.md",
+        "fileCount": 1
+      },
+      {
+        "name": "PROJECT_MAP.md",
+        "fileCount": 1
+      },
+      {
+        "name": "vite.config.ts",
+        "fileCount": 1
+      },
+      {
+        "name": "vitest.config.ts",
+        "fileCount": 1
+      }
+    ],
+    "languageDistribution": [
+      {
+        "extension": ".tsx",
+        "count": 53
+      },
+      {
+        "extension": ".md",
+        "count": 32
+      },
+      {
+        "extension": ".ts",
+        "count": 4
+      },
+      {
+        "extension": ".css",
+        "count": 3
+      }
+    ]
+  },
+  "architecture": {
+    "layers": [
+      {
+        "name": "Utils",
+        "description": "Shared utilities and helpers",
+        "directories": [
+          "docs\\archive\\src\\app\\components\\ui",
+          "docs\\archive\\src\\app\\components"
+        ],
+        "symbolCount": 2,
+        "dependsOn": [
+          "Components"
+        ]
+      },
+      {
+        "name": "Components",
+        "description": "UI components and views",
+        "directories": [
+          "docs\\archive\\src\\app\\components\\ui",
+          "docs\\archive\\src\\app\\components",
+          "docs\\archive\\src\\app\\components\\figma"
+        ],
+        "symbolCount": 92,
+        "dependsOn": []
+      }
+    ],
+    "patterns": [],
+    "entryPoints": []
+  },
+  "symbols": {
+    "classes": [],
+    "interfaces": [
+      {
+        "name": "PromptCardProps",
+        "kind": "interface",
+        "file": "docs\\archive\\src\\app\\components\\PromptCard.tsx",
+        "line": 11,
+        "exported": false
+      },
+      {
+        "name": "SearchBarProps",
+        "kind": "interface",
+        "file": "docs\\archive\\src\\app\\components\\SearchBar.tsx",
+        "line": 4,
+        "exported": false
+      },
+      {
+        "name": "SidebarProps",
+        "kind": "interface",
+        "file": "docs\\archive\\src\\app\\components\\Sidebar.tsx",
+        "line": 18,
+        "exported": false
+      },
+      {
+        "name": "WelcomeScreenProps",
+        "kind": "interface",
+        "file": "docs\\archive\\src\\app\\components\\WelcomeScreen.tsx",
+        "line": 3,
+        "exported": false
+      }
+    ],
+    "functions": [
+      {
+        "name": "cn",
+        "kind": "function",
+        "file": "docs\\archive\\src\\app\\components\\ui\\utils.ts",
+        "line": 4,
+        "exported": true
+      },
+      {
+        "name": "ImageWithFallback",
+        "kind": "function",
+        "file": "docs\\archive\\src\\app\\components\\figma\\ImageWithFallback.tsx",
+        "line": 6,
+        "exported": true
+      },
+      {
+        "name": "PromptCard",
+        "kind": "function",
+        "file": "docs\\archive\\src\\app\\components\\PromptCard.tsx",
+        "line": 23,
+        "exported": true
+      },
+      {
+        "name": "useIsMobile",
+        "kind": "function",
+        "file": "docs\\archive\\src\\app\\components\\ui\\use-mobile.ts",
+        "line": 5,
+        "exported": true
+      },
+      {
+        "name": "WelcomeScreen",
+        "kind": "function",
+        "file": "docs\\archive\\src\\app\\components\\WelcomeScreen.tsx",
+        "line": 8,
+        "exported": true
+      },
+      {
+        "name": "AccordionContent",
+        "kind": "function",
+        "file": "docs\\archive\\src\\app\\components\\ui\\accordion.tsx",
+        "line": 50,
+        "exported": false
+      },
+      {
+        "name": "AccordionItem",
+        "kind": "function",
+        "file": "docs\\archive\\src\\app\\components\\ui\\accordion.tsx",
+        "line": 15,
+        "exported": false
+      },
+      {
+        "name": "AccordionTrigger",
+        "kind": "function",
+        "file": "docs\\archive\\src\\app\\components\\ui\\accordion.tsx",
+        "line": 28,
+        "exported": false
+      },
+      {
+        "name": "AlertDialogAction",
+        "kind": "function",
+        "file": "docs\\archive\\src\\app\\components\\ui\\alert-dialog.tsx",
+        "line": 121,
+        "exported": false
+      },
+      {
+        "name": "AlertDialogCancel",
+        "kind": "function",
+        "file": "docs\\archive\\src\\app\\components\\ui\\alert-dialog.tsx",
+        "line": 133,
+        "exported": false
+      },
+      {
+        "name": "AlertDialogDescription",
+        "kind": "function",
+        "file": "docs\\archive\\src\\app\\components\\ui\\alert-dialog.tsx",
+        "line": 108,
+        "exported": false
+      },
+      {
+        "name": "AlertDialogPortal",
+        "kind": "function",
+        "file": "docs\\archive\\src\\app\\components\\ui\\alert-dialog.tsx",
+        "line": 23,
+        "exported": false
+      },
+      {
+        "name": "AlertDialogTrigger",
+        "kind": "function",
+        "file": "docs\\archive\\src\\app\\components\\ui\\alert-dialog.tsx",
+        "line": 15,
+        "exported": false
+      },
+      {
+        "name": "Badge",
+        "kind": "function",
+        "file": "docs\\archive\\src\\app\\components\\ui\\badge.tsx",
+        "line": 28,
+        "exported": false
+      },
+      {
+        "name": "Breadcrumb",
+        "kind": "function",
+        "file": "docs\\archive\\src\\app\\components\\ui\\breadcrumb.tsx",
+        "line": 7,
+        "exported": false
+      },
+      {
+        "name": "Carousel",
+        "kind": "function",
+        "file": "docs\\archive\\src\\app\\components\\ui\\carousel.tsx",
+        "line": 45,
+        "exported": false
+      },
+      {
+        "name": "CarouselNext",
+        "kind": "function",
+        "file": "docs\\archive\\src\\app\\components\\ui\\carousel.tsx",
+        "line": 204,
+        "exported": false
+      },
+      {
+        "name": "ChartContainer",
+        "kind": "function",
+        "file": "docs\\archive\\src\\app\\components\\ui\\chart.tsx",
+        "line": 37,
+        "exported": false
+      },
+      {
+        "name": "Checkbox",
+        "kind": "function",
+        "file": "docs\\archive\\src\\app\\components\\ui\\checkbox.tsx",
+        "line": 9,
+        "exported": false
+      },
+      {
+        "name": "CollapsibleContent",
+        "kind": "function",
+        "file": "docs\\archive\\src\\app\\components\\ui\\collapsible.tsx",
+        "line": 22,
+        "exported": false
+      },
+      {
+        "name": "CollapsibleTrigger",
+        "kind": "function",
+        "file": "docs\\archive\\src\\app\\components\\ui\\collapsible.tsx",
+        "line": 11,
+        "exported": false
+      },
+      {
+        "name": "ContextMenuGroup",
+        "kind": "function",
+        "file": "docs\\archive\\src\\app\\components\\ui\\context-menu.tsx",
+        "line": 23,
+        "exported": false
+      },
+      {
+        "name": "ContextMenuPortal",
+        "kind": "function",
+        "file": "docs\\archive\\src\\app\\components\\ui\\context-menu.tsx",
+        "line": 31,
+        "exported": false
+      },
+      {
+        "name": "ContextMenuRadioGroup",
+        "kind": "function",
+        "file": "docs\\archive\\src\\app\\components\\ui\\context-menu.tsx",
+        "line": 45,
+        "exported": false
+      },
+      {
+        "name": "ContextMenuRadioItem",
+        "kind": "function",
+        "file": "docs\\archive\\src\\app\\components\\ui\\context-menu.tsx",
+        "line": 163,
+        "exported": false
+      },
+      {
+        "name": "ContextMenuSub",
+        "kind": "function",
+        "file": "docs\\archive\\src\\app\\components\\ui\\context-menu.tsx",
+        "line": 39,
+        "exported": false
+      },
+      {
+        "name": "ContextMenuTrigger",
+        "kind": "function",
+        "file": "docs\\archive\\src\\app\\components\\ui\\context-menu.tsx",
+        "line": 15,
+        "exported": false
+      },
+      {
+        "name": "DialogDescription",
+        "kind": "function",
+        "file": "docs\\archive\\src\\app\\components\\ui\\dialog.tsx",
+        "line": 111,
+        "exported": false
+      },
+      {
+        "name": "DialogOverlay",
+        "kind": "function",
+        "file": "docs\\archive\\src\\app\\components\\ui\\dialog.tsx",
+        "line": 33,
+        "exported": false
+      },
+      {
+        "name": "DrawerOverlay",
+        "kind": "function",
+        "file": "docs\\archive\\src\\app\\components\\ui\\drawer.tsx",
+        "line": 32,
+        "exported": false
+      },
+      {
+        "name": "DropdownMenu",
+        "kind": "function",
+        "file": "docs\\archive\\src\\app\\components\\ui\\dropdown-menu.tsx",
+        "line": 9,
+        "exported": false
+      },
+      {
+        "name": "DropdownMenuContent",
+        "kind": "function",
+        "file": "docs\\archive\\src\\app\\components\\ui\\dropdown-menu.tsx",
+        "line": 34,
+        "exported": false
+      },
+      {
+        "name": "DropdownMenuItem",
+        "kind": "function",
+        "file": "docs\\archive\\src\\app\\components\\ui\\dropdown-menu.tsx",
+        "line": 62,
+        "exported": false
+      },
+      {
+        "name": "DropdownMenuPortal",
+        "kind": "function",
+        "file": "docs\\archive\\src\\app\\components\\ui\\dropdown-menu.tsx",
+        "line": 15,
+        "exported": false
+      },
+      {
+        "name": "DropdownMenuRadioGroup",
+        "kind": "function",
+        "file": "docs\\archive\\src\\app\\components\\ui\\dropdown-menu.tsx",
+        "line": 111,
+        "exported": false
+      },
+      {
+        "name": "DropdownMenuRadioItem",
+        "kind": "function",
+        "file": "docs\\archive\\src\\app\\components\\ui\\dropdown-menu.tsx",
+        "line": 122,
+        "exported": false
+      },
+      {
+        "name": "DropdownMenuTrigger",
+        "kind": "function",
+        "file": "docs\\archive\\src\\app\\components\\ui\\dropdown-menu.tsx",
+        "line": 23,
+        "exported": false
+      },
+      {
+        "name": "FormControl",
+        "kind": "function",
+        "file": "docs\\archive\\src\\app\\components\\ui\\form.tsx",
+        "line": 107,
+        "exported": false
+      },
+      {
+        "name": "FormDescription",
+        "kind": "function",
+        "file": "docs\\archive\\src\\app\\components\\ui\\form.tsx",
+        "line": 126,
+        "exported": false
+      },
+      {
+        "name": "HoverCardContent",
+        "kind": "function",
+        "file": "docs\\archive\\src\\app\\components\\ui\\hover-card.tsx",
+        "line": 22,
+        "exported": false
+      },
+      {
+        "name": "HoverCardTrigger",
+        "kind": "function",
+        "file": "docs\\archive\\src\\app\\components\\ui\\hover-card.tsx",
+        "line": 14,
+        "exported": false
+      },
+      {
+        "name": "Input",
+        "kind": "function",
+        "file": "docs\\archive\\src\\app\\components\\ui\\input.tsx",
+        "line": 5,
+        "exported": false
+      },
+      {
+        "name": "InputOTP",
+        "kind": "function",
+        "file": "docs\\archive\\src\\app\\components\\ui\\input-otp.tsx",
+        "line": 9,
+        "exported": false
+      },
+      {
+        "name": "Label",
+        "kind": "function",
+        "file": "docs\\archive\\src\\app\\components\\ui\\label.tsx",
+        "line": 8,
+        "exported": false
+      },
+      {
+        "name": "Menubar",
+        "kind": "function",
+        "file": "docs\\archive\\src\\app\\components\\ui\\menubar.tsx",
+        "line": 9,
+        "exported": false
+      },
+      {
+        "name": "MenubarRadioGroup",
+        "kind": "function",
+        "file": "docs\\archive\\src\\app\\components\\ui\\menubar.tsx",
+        "line": 43,
+        "exported": false
+      },
+      {
+        "name": "MenubarRadioItem",
+        "kind": "function",
+        "file": "docs\\archive\\src\\app\\components\\ui\\menubar.tsx",
+        "line": 140,
+        "exported": false
+      },
+      {
+        "name": "MenubarSubContent",
+        "kind": "function",
+        "file": "docs\\archive\\src\\app\\components\\ui\\menubar.tsx",
+        "line": 243,
+        "exported": false
+      },
+      {
+        "name": "NavigationMenu",
+        "kind": "function",
+        "file": "docs\\archive\\src\\app\\components\\ui\\navigation-menu.tsx",
+        "line": 8,
+        "exported": false
+      },
+      {
+        "name": "NavigationMenuContent",
+        "kind": "function",
+        "file": "docs\\archive\\src\\app\\components\\ui\\navigation-menu.tsx",
+        "line": 85,
+        "exported": false
+      }
+    ],
+    "types": [
+      {
+        "name": "ChartConfig",
+        "kind": "type",
+        "file": "docs\\archive\\src\\app\\components\\ui\\chart.tsx",
+        "line": 11,
+        "exported": true
+      },
+      {
+        "name": "CarouselApi",
+        "kind": "type",
+        "file": "docs\\archive\\src\\app\\components\\ui\\carousel.tsx",
+        "line": 12,
+        "exported": false
+      },
+      {
+        "name": "CarouselContextProps",
+        "kind": "type",
+        "file": "docs\\archive\\src\\app\\components\\ui\\carousel.tsx",
+        "line": 24,
+        "exported": false
+      },
+      {
+        "name": "CarouselOptions",
+        "kind": "type",
+        "file": "docs\\archive\\src\\app\\components\\ui\\carousel.tsx",
+        "line": 14,
+        "exported": false
+      },
+      {
+        "name": "CarouselPlugin",
+        "kind": "type",
+        "file": "docs\\archive\\src\\app\\components\\ui\\carousel.tsx",
+        "line": 15,
+        "exported": false
+      },
+      {
+        "name": "CarouselProps",
+        "kind": "type",
+        "file": "docs\\archive\\src\\app\\components\\ui\\carousel.tsx",
+        "line": 17,
+        "exported": false
+      },
+      {
+        "name": "ChartContextProps",
+        "kind": "type",
+        "file": "docs\\archive\\src\\app\\components\\ui\\chart.tsx",
+        "line": 21,
+        "exported": false
+      },
+      {
+        "name": "FormFieldContextValue",
+        "kind": "type",
+        "file": "docs\\archive\\src\\app\\components\\ui\\form.tsx",
+        "line": 21,
+        "exported": false
+      },
+      {
+        "name": "FormItemContextValue",
+        "kind": "type",
+        "file": "docs\\archive\\src\\app\\components\\ui\\form.tsx",
+        "line": 68,
+        "exported": false
+      },
+      {
+        "name": "SidebarContextProps",
+        "kind": "type",
+        "file": "docs\\archive\\src\\app\\components\\ui\\sidebar.tsx",
+        "line": 35,
+        "exported": false
+      },
+      {
+        "name": "UseCarouselParameters",
+        "kind": "type",
+        "file": "docs\\archive\\src\\app\\components\\ui\\carousel.tsx",
+        "line": 13,
+        "exported": false
+      },
+      {
+        "name": "ViewMode",
+        "kind": "type",
+        "file": "docs\\archive\\src\\app\\components\\PromptLibrary.tsx",
+        "line": 42,
+        "exported": false
+      }
+    ],
+    "enums": []
+  },
+  "publicAPI": [
+    {
+      "name": "ChartConfig",
+      "kind": "type",
+      "file": "docs\\archive\\src\\app\\components\\ui\\chart.tsx",
+      "line": 11,
+      "exported": true
+    },
+    {
+      "name": "cn",
+      "kind": "function",
+      "file": "docs\\archive\\src\\app\\components\\ui\\utils.ts",
+      "line": 4,
+      "exported": true
+    },
+    {
+      "name": "ImageWithFallback",
+      "kind": "function",
+      "file": "docs\\archive\\src\\app\\components\\figma\\ImageWithFallback.tsx",
+      "line": 6,
+      "exported": true
+    },
+    {
+      "name": "PromptCard",
+      "kind": "function",
+      "file": "docs\\archive\\src\\app\\components\\PromptCard.tsx",
+      "line": 23,
+      "exported": true
+    },
+    {
+      "name": "useIsMobile",
+      "kind": "function",
+      "file": "docs\\archive\\src\\app\\components\\ui\\use-mobile.ts",
+      "line": 5,
+      "exported": true
+    },
+    {
+      "name": "WelcomeScreen",
+      "kind": "function",
+      "file": "docs\\archive\\src\\app\\components\\WelcomeScreen.tsx",
+      "line": 8,
+      "exported": true
+    }
+  ],
+  "dependencies": {
+    "mostImported": [
+      {
+        "file": "C:\\Users\\devul\\Desktop\\ControledeEstoques\\docs\\archive\\src\\app\\components\\ui\\utils.ts",
+        "importedBy": 43
+      },
+      {
+        "file": "C:\\Users\\devul\\Desktop\\ControledeEstoques\\docs\\archive\\src\\app\\components\\ui\\button.tsx",
+        "importedBy": 5
+      },
+      {
+        "file": "C:\\Users\\devul\\Desktop\\ControledeEstoques\\docs\\archive\\src\\app\\components\\ui\\tooltip.tsx",
+        "importedBy": 2
+      },
+      {
+        "file": "C:\\Users\\devul\\Desktop\\ControledeEstoques\\docs\\archive\\src\\app\\components\\Sidebar.tsx",
+        "importedBy": 1
+      },
+      {
+        "file": "C:\\Users\\devul\\Desktop\\ControledeEstoques\\docs\\archive\\src\\app\\components\\WelcomeScreen.tsx",
+        "importedBy": 1
+      },
+      {
+        "file": "C:\\Users\\devul\\Desktop\\ControledeEstoques\\docs\\archive\\src\\app\\components\\PromptLibrary.tsx",
+        "importedBy": 1
+      },
+      {
+        "file": "C:\\Users\\devul\\Desktop\\ControledeEstoques\\docs\\archive\\src\\app\\components\\SearchBar.tsx",
+        "importedBy": 1
+      },
+      {
+        "file": "C:\\Users\\devul\\Desktop\\ControledeEstoques\\docs\\archive\\src\\app\\components\\PromptCard.tsx",
+        "importedBy": 1
+      },
+      {
+        "file": "C:\\Users\\devul\\Desktop\\ControledeEstoques\\docs\\archive\\src\\app\\components\\ui\\dropdown-menu.tsx",
+        "importedBy": 1
+      },
+      {
+        "file": "C:\\Users\\devul\\Desktop\\ControledeEstoques\\docs\\archive\\src\\app\\components\\ui\\toggle.tsx",
+        "importedBy": 1
+      },
+      {
+        "file": "C:\\Users\\devul\\Desktop\\ControledeEstoques\\docs\\archive\\src\\app\\components\\ui\\use-mobile.ts",
+        "importedBy": 1
+      },
+      {
+        "file": "C:\\Users\\devul\\Desktop\\ControledeEstoques\\docs\\archive\\src\\app\\components\\ui\\input.tsx",
+        "importedBy": 1
+      },
+      {
+        "file": "C:\\Users\\devul\\Desktop\\ControledeEstoques\\docs\\archive\\src\\app\\components\\ui\\separator.tsx",
+        "importedBy": 1
+      },
+      {
+        "file": "C:\\Users\\devul\\Desktop\\ControledeEstoques\\docs\\archive\\src\\app\\components\\ui\\sheet.tsx",
+        "importedBy": 1
+      },
+      {
+        "file": "C:\\Users\\devul\\Desktop\\ControledeEstoques\\docs\\archive\\src\\app\\components\\ui\\skeleton.tsx",
+        "importedBy": 1
+      },
+      {
+        "file": "C:\\Users\\devul\\Desktop\\ControledeEstoques\\docs\\archive\\src\\app\\components\\ui\\label.tsx",
+        "importedBy": 1
+      },
+      {
+        "file": "C:\\Users\\devul\\Desktop\\ControledeEstoques\\docs\\archive\\src\\app\\components\\ui\\dialog.tsx",
+        "importedBy": 1
+      }
+    ]
+  },
+  "stats": {
+    "totalSymbols": 94,
+    "exportedSymbols": 6,
+    "analysisTimeMs": 542
+  }
+}

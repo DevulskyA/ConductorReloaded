@@ -1,0 +1,24 @@
+{
+  "planSlug": "wms_core_20260204",
+  "progress": 100,
+  "phases": {
+    "Phase 1: Endereçamento e Estrutura Hierárquica": {
+      "status": "completed",
+      "updatedAt": "2026-02-04T23:40:53.611Z"
+    },
+    "Phase 2: Regras de Recebimento (Putaway)": {
+      "status": "completed",
+      "updatedAt": "2026-02-04T23:42:16.611Z"
+    },
+    "Phase 3: Auditoria e Cycle Count (ABC)": {
+      "status": "completed",
+      "updatedAt": "2026-02-04T23:42:16.661Z"
+    },
+    "Phase 4: Fluxo de RMA (Retorno de Mercadoria)": {
+      "status": "completed",
+      "updatedAt": "2026-02-04T23:42:16.702Z"
+    }
+  },
+  "decisions": [],
+  "lastUpdated": "2026-02-04T23:40:39.612Z"
+}

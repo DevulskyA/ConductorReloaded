@@ -1,0 +1,12 @@
+{
+  "phases": {
+    "Phase 1: Diagnóstico e Correção Backend": {
+      "status": "completed",
+      "updatedAt": "2026-02-04T23:53:55.667Z"
+    },
+    "Phase 2: Diagnóstico e Correção Frontend": {
+      "status": "completed",
+      "updatedAt": "2026-02-04T23:53:55.731Z"
+    }
+  }
+}

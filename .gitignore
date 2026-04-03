@@ -6,3 +6,6 @@ dist
 .patch*.js
 .vendor
 *.zip
+*.rar
+*.7z
+*.tar

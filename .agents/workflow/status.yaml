@@ -1,0 +1,30 @@
+project:
+  name: "wms_core_20260204"
+  scale: MEDIUM
+  started: "2026-02-04T23:40:47.186Z"
+  current_phase: P
+
+phases:
+  P:
+    status: in_progress
+    started_at: "2026-02-04T23:40:47.186Z"
+  R:
+    status: pending
+  E:
+    status: pending
+  V:
+    status: pending
+  C:
+    status: skipped
+    reason: "Not required for scale MEDIUM"
+
+execution:
+  history:
+    - timestamp: "2026-02-04T23:53:55.732Z"
+      phase: P
+      action: plan_phase_updated
+      plan: "fix_build_20260204"
+      description: "Plan phase Phase 2: Diagnóstico e Correção Frontend updated to completed"
+  last_activity: "2026-02-04T23:53:55.732Z"
+  resume_context: "Fase do plano atualizada"
+
